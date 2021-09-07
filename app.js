@@ -1,6 +1,16 @@
 var gridSize = 16
 var container
 
+function getRandomColor() {
+  var letters = '0123456789ABCDEF';
+  var color = '#';
+  for (var i = 0; i < 6; i++) {
+    color += letters[Math.floor(Math.random() * 16)];
+  }
+  return color;
+}
+
+
 function displayGrid() {
   const body = document.body
   const container = document.createElement('div')
@@ -11,11 +21,12 @@ function displayGrid() {
   var x = gridSize
   var cells = x * x
 
+
   for (var i = 0; i < cells; i += 1) {
     var gridItem = document.createElement('div')
     // gridItem.textContent = `${i}`
     gridItem.addEventListener('mouseenter', function (e) {
-      e.target.classList.add('gridItemBackground')
+      e.target.style.backgroundColor= getRandomColor()
     })
     container.appendChild(gridItem)
     gridItem.classList.add('gridItem')
@@ -27,7 +38,7 @@ function getNewGridSize() {
   if (isNaN(newSize)) {
     prompt('sorry I need you to enter a number', 0)
   }
-  else if (newSize > 100) {
+  else if (parseInt(newSize) > 100) {
     prompt('um, I need a smaller number.  Something less than 100 please', 0)
   }
   else {

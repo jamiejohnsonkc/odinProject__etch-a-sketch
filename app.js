@@ -15,7 +15,7 @@ function displayGrid() {
     var gridItem = document.createElement('div')
     // gridItem.textContent = `${i}`
     gridItem.addEventListener('mouseenter', function (e) {
-      e.target.classList.add('darkBackground')
+      e.target.classList.add('gridItemBackground')
     })
     container.appendChild(gridItem)
     gridItem.classList.add('gridItem')

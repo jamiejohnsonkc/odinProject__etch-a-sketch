@@ -13,10 +13,6 @@ height: 100%;
 width: 100%;
 }
 
-.darkBackground {
+.gridItemBackground {
     background-color: black;
-}
-
-.testColor{
-    color: blue;
 }
